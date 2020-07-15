@@ -17,7 +17,7 @@ $ docker run --rm -p 8080:8080 todomvc
 
 Wait for a message log similar to this:
 
-> 19:19:21,704 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 19.0.0.Final (WildFly Core 11.0.0.Final) started in 7429ms - Started 308 of 470 services (240 services are lazy, passive or on-demand)
+> 19:19:21,704 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 20.0.0.Final (WildFly Core 11.0.0.Final) started in 7429ms - Started 308 of 470 services (240 services are lazy, passive or on-demand)
 
 If everything worked you can access the OpenAPI UI via http://localhost:8080/swagger-ui.
 
