@@ -1,6 +1,7 @@
-# Wildfly Showcase
+# Todo application utilizing MVC
 
-This is a project based on the [Wildfly](https://wildfly.org) application server. It contains a hello world application, which demonstrates features of Wildfly and Eclipse Microprofile
+This is a project based on the [Wildfly](https://wildfly.org) application server. For now it contains a hello world application, which demonstrates features of Wildfly and Eclipse Microprofile
+In the future it is going to be replaced by the actual Todo application, in which can be used to create, update and delete Todos similiar to the project [todo-service](https://github.com/martinfruehauf/todo-service) and [todo-angular](https://github.com/martinfruehauf/todo-angular).
 
 Software requirements to run the samples are `maven`, `openjdk-1.8` (or any other 1.8 JDK) and `docker`.
 When running the Maven lifecycle it will create the war package. The war will be copied into a
