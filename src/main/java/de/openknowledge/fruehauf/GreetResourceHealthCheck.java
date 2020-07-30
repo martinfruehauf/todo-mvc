@@ -21,8 +21,6 @@ import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
 import org.eclipse.microprofile.health.Readiness;
 
-import java.net.URI;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.ApplicationPath;
@@ -30,6 +28,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
+import java.net.URI;
 
 /**
  * Health check for the resource {@link GreetResource}.
@@ -39,11 +38,11 @@ import javax.ws.rs.core.UriBuilder;
 public class GreetResourceHealthCheck implements HealthCheck {
 
   @Inject
-  @ConfigProperty(name = "jboss.http.port")
+  @ConfigProperty(name = "jboss.http.port", defaultValue = "8080")
   private Integer port;
 
   @Inject
-  @ConfigProperty(name = "app.context.root")
+  @ConfigProperty(name = "app.context.root", defaultValue = "todomvc")
   private String contextRoot;
 
   @Override
