@@ -10,6 +10,11 @@
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
+
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres" />
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.user" value="test_username" />
+            <property name="javax.persistence.jdbc.password" value="test_password" />
         </properties>
     </persistence-unit>
 </persistence>
