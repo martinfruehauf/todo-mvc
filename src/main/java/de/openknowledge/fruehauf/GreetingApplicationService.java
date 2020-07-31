@@ -17,10 +17,12 @@ package de.openknowledge.fruehauf;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Service for greeting message.
@@ -28,7 +30,17 @@ import javax.inject.Inject;
 @ApplicationScoped
 public class GreetingApplicationService {
 
+  @PersistenceContext(unitName = "default")
+  private EntityManager em;
+
   private final AtomicReference<String> greeting = new AtomicReference<>();
+
+  @Transactional
+  public GreetingDTO createGreeting(String name) {
+    GreetingDTO greetingDTO = new GreetingDTO(name);
+    em.persist(greetingDTO);
+    return greetingDTO;
+  }
 
   public GreetingApplicationService() {
     super();

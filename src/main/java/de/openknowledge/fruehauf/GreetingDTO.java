@@ -17,16 +17,20 @@ package de.openknowledge.fruehauf;
 
 import org.apache.commons.lang3.Validate;
 
-import java.util.Objects;
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /**
  * A DTO that represents a greeting
  */
+@Entity
 public class GreetingDTO {
 
+
   @NotNull
+  @Id
   private String greeting;
 
   public GreetingDTO() {
