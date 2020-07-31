@@ -36,6 +36,8 @@
         <version.testcontainers>1.14.3</version.testcontainers>
         <version.rest-assured>4.3.1</version.rest-assured>
 
+        <version.krazo>1.0.0</version.krazo>
+
         <version.jacoco>0.8.5</version.jacoco>
     </properties>
 
@@ -327,6 +329,27 @@
             <version>${version.jacoco}</version>
             <classifier>runtime</classifier>
             <scope>test</scope>
+        </dependency>
+
+        <!-- Javax MVC -->
+        <dependency>
+            <groupId>javax.mvc</groupId>
+            <artifactId>javax.mvc-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- Eclipse Krazo Core -->
+        <dependency>
+            <groupId>org.eclipse.krazo</groupId>
+            <artifactId>krazo-core</artifactId>
+            <version>${version.krazo}</version>
+        </dependency>
+
+        <!-- Eclipse Krazo for Wildfly -->
+        <dependency>
+            <groupId>org.eclipse.krazo</groupId>
+            <artifactId>krazo-resteasy</artifactId>
+            <version>${version.krazo}</version>
         </dependency>
     </dependencies>
 </project>
