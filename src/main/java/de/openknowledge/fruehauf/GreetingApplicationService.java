@@ -36,7 +36,7 @@ public class GreetingApplicationService {
   private final AtomicReference<String> greeting = new AtomicReference<>();
 
   @Transactional
-  public GreetingDTO CreateGreeting(String name) {
+  public GreetingDTO createGreeting(String name) {
     GreetingDTO greetingDTO = new GreetingDTO(name);
     em.persist(greetingDTO);
     return greetingDTO;

@@ -59,7 +59,7 @@ public class GreetResource {
   public Response greet(@Parameter(description = "name") @PathParam("name") final String name) {
     LOG.info("Greet {}", name);
 
-    GreetingDTO message = service.CreateGreeting(name);
+    GreetingDTO message = service.createGreeting(name);
 
     LOG.info("{}", message);
 
