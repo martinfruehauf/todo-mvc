@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package de.openknowledge.fruehauf;
+package de.openknowledge.fruehauf.config;
 
 import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
 import org.eclipse.microprofile.openapi.annotations.info.Contact;
@@ -30,7 +30,7 @@ import javax.ws.rs.core.Application;
  */
 @ApplicationPath("api")
 @OpenAPIDefinition(info =
-@Info(title = "Todo app in MVC", description = "Provides a todo app implemented with MVC", version = "1.0.0",
+@Info(title = "Todo app in MVC", description = "Provides access to the API operations", version = "1.0.0",
     contact = @Contact(email = "martin.fruehauf@openknowledge.de"),
     license = @License(name = "Apache 2.0", url = "http://www.apache.org/licenses/LICENSE-2.0.html")),
     servers = @Server(url = "http://{host}:{port}/{context-root}", variables = {
