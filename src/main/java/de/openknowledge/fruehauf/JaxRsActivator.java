@@ -30,8 +30,8 @@ import javax.ws.rs.core.Application;
  */
 @ApplicationPath("api")
 @OpenAPIDefinition(info =
-@Info(title = "Greeting API", description = "Provides access to the API operations", version = "1.0.0",
-    contact = @Contact(email = "kontakt@openknowledge.de"),
+@Info(title = "Todo app in MVC", description = "Provides a todo app implemented with MVC", version = "1.0.0",
+    contact = @Contact(email = "martin.fruehauf@openknowledge.de"),
     license = @License(name = "Apache 2.0", url = "http://www.apache.org/licenses/LICENSE-2.0.html")),
     servers = @Server(url = "http://{host}:{port}/{context-root}", variables = {
         @ServerVariable(name = "host", defaultValue = "localhost"),
