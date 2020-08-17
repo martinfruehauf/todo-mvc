@@ -28,9 +28,9 @@ import javax.ws.rs.core.Application;
 /**
  * JAX-RS Activator
  */
-@ApplicationPath("api")
+@ApplicationPath("mvc")
 @OpenAPIDefinition(info =
-@Info(title = "Todo app in MVC", description = "Provides access to the API operations", version = "1.0.0",
+@Info(title = "Todo app in MVC", description = "Provides access mvc", version = "1.0.0",
     contact = @Contact(email = "martin.fruehauf@openknowledge.de"),
     license = @License(name = "Apache 2.0", url = "http://www.apache.org/licenses/LICENSE-2.0.html")),
     servers = @Server(url = "http://{host}:{port}/{context-root}", variables = {
