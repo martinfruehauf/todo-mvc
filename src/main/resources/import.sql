@@ -2,7 +2,7 @@ create table tab_todo (
   col_name text,
   col_desc text,
   col_state boolean,
-  col_due text
+  col_due timestamp
 );
 
 insert into tab_todo (col_name, col_desc, col_state, col_due) values ('Hydrocodone Bitartrate', 'congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero', true, '2019-10-09T23:11:00');
