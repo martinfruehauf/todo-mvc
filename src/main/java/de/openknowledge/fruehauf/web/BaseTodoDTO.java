@@ -1,9 +1,15 @@
 package de.openknowledge.fruehauf.web;
 
+import de.openknowledge.fruehauf.domain.TodoValidationErrorPayload;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 public class BaseTodoDTO {
 
+    @NotNull(payload = TodoValidationErrorPayload.TitleIsInvalid.class)
+    @Size(min = 1, max = 30, payload = TodoValidationErrorPayload.TitleSize.class)
     private String name;
 
     private String description;
