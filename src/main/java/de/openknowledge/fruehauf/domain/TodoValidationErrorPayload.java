@@ -28,6 +28,10 @@ public class TodoValidationErrorPayload {
         }
     }
 
+    public static class StatusNull extends ValidationErrorPayload {
+        public StatusNull() { super("STATUS_NULL", "status must not be null");}
+    }
+
     public static class DueDateNull extends ValidationErrorPayload {
         public DueDateNull() {
             super("DUEDATE_NULL", "dueDate must not be null");

@@ -12,10 +12,13 @@ public class BaseTodoDTO {
     @Size(min = 1, max = 30, payload = TodoValidationErrorPayload.TitleSize.class)
     private String name;
 
+    @Size(max = 500, payload = TodoValidationErrorPayload.DescriptionSize.class)
     private String description;
 
+    @NotNull(payload = TodoValidationErrorPayload.StatusNull.class)
     private boolean status;
 
+    @NotNull(payload = TodoValidationErrorPayload.DueDateNull.class)
     private String dueDate;
 
     public BaseTodoDTO() {}
