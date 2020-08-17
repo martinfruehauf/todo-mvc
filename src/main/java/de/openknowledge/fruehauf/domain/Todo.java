@@ -1,15 +1,19 @@
 package de.openknowledge.fruehauf.domain;
 
+import de.openknowledge.fruehauf.web.BaseTodoDTO;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
+@Table(name = "tab_todo")
 public class Todo implements Serializable {
 
     @Id
@@ -31,6 +35,29 @@ public class Todo implements Serializable {
 
     public Todo () {}
 
+    public Todo(final long id, final String name, final String description, final boolean status, final LocalDateTime dueDate) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.status = status;
+        this.dueDate = dueDate;
+    }
+
+    public Todo(final BaseTodoDTO baseTodoDTO) {
+        this.name = baseTodoDTO.getName();
+        this.description = baseTodoDTO.getDescription();
+        this.status = baseTodoDTO.isStatus();
+        this.dueDate = LocalDateTime.parse(baseTodoDTO.getDueDate().substring(0,19));
+    }
+
+    public Todo(final long todoId, final BaseTodoDTO baseTodoDTO) {
+        this.id = todoId;
+        this.name = baseTodoDTO.getName();
+        this.description = baseTodoDTO.getDescription();
+        this.status = baseTodoDTO.isStatus();
+        this.dueDate = LocalDateTime.parse(baseTodoDTO.getDueDate().substring(0,19));
+    }
+
     public long getId() {
         return id;
     }
@@ -43,7 +70,7 @@ public class Todo implements Serializable {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -51,7 +78,7 @@ public class Todo implements Serializable {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(final String description) {
         this.description = description;
     }
 
@@ -59,7 +86,7 @@ public class Todo implements Serializable {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(final boolean status) {
         this.status = status;
     }
 
@@ -67,7 +94,7 @@ public class Todo implements Serializable {
         return dueDate;
     }
 
-    public void setDueDate(LocalDateTime dueDate) {
+    public void setDueDate(final LocalDateTime dueDate) {
         this.dueDate = dueDate;
     }
 
