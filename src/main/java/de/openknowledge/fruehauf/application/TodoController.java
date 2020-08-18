@@ -1,4 +1,4 @@
-package de.openknowledge.fruehauf.web;
+package de.openknowledge.fruehauf.application;
 
 import de.openknowledge.fruehauf.domain.Todo;
 import org.slf4j.Logger;
