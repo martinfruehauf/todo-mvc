@@ -1,6 +1,6 @@
 package de.openknowledge.fruehauf.domain;
 
-import de.openknowledge.fruehauf.web.BaseTodoDTO;
+import de.openknowledge.fruehauf.application.BaseTodoDTO;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
