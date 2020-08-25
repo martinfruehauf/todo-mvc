@@ -4,7 +4,6 @@ import de.openknowledge.fruehauf.infrastructure.stereotypes.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.ArrayList;
@@ -18,11 +17,6 @@ public class TodoService {
     private static final Logger LOG = LoggerFactory.getLogger(TodoService.class);
 
     public TodoService() {
-
-    }
-
-    @PostConstruct
-    public void init() {
         LOG.info("TodoService initialized");
     }
 
