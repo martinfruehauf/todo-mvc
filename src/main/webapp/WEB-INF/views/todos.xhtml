@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                template="/WEB-INF/layout/template.xhtml">
+    <ui:define name="pageTitle">Todo List</ui:define>
+    <ui:define name="content">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <c:forEach var="todo" begin="0" items="${todos}">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-list-alt" aria-hidden="true"></i>
+                            <span>#${todo.id}</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"><span>${todo.name}</span></p>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>
