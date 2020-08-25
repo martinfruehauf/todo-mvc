@@ -16,7 +16,7 @@ public class TodoRepository {
     @PersistenceContext(unitName = "default")
     private EntityManager em;
 
-    public List<Todo> allTodos() {
+    public List<Todo> getAllTodos() {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Todo> cq = cb.createQuery(Todo.class);
         Root<Todo> root = cq.from(Todo.class);

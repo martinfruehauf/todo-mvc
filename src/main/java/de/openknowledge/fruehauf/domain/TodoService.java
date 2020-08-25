@@ -19,6 +19,6 @@ public class TodoService {
 
     public List<Todo> allTodos() {
         LOG.info("Get all todos");
-        return todoRepository.allTodos();
+        return todoRepository.getAllTodos();
     }
 }
