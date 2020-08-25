@@ -44,6 +44,5 @@ public class TodoController {
         models.put("todos", mockTodoList); // the String "todos" can be used to access the mockTodoList in the todos.xhtml
     }
 
-
 }
 
