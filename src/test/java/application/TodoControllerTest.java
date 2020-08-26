@@ -4,12 +4,14 @@ import de.openknowledge.fruehauf.application.FullTodoDTO;
 import de.openknowledge.fruehauf.application.TodoController;
 import de.openknowledge.fruehauf.domain.Todo;
 import de.openknowledge.fruehauf.domain.TodoService;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,16 +25,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 public class TodoControllerTest {
+
     private static final Logger LOG = LoggerFactory.getLogger(TodoControllerTest.class);
 
-    @Mock //vorher inject
-    private Models models;
-
-    @InjectMocks
-    private TodoController controller;
+    @Mock
+    private Models models = Mockito.mock(Models.class);
 
     @Mock
     private TodoService service;
+
+    @InjectMocks
+    private TodoController controller;
 
     @Test
     public void testAllTodos() {
@@ -57,9 +60,7 @@ public class TodoControllerTest {
 
 
         //Mockito.doReturn(null)
-        Mockito.doNothing()
-                .when(models)
-                .put(ArgumentMatchers.anyString(), ArgumentMatchers.anyList());
+        Mockito.when(models.put(ArgumentMatchers.anyString(), ArgumentMatchers.anyList())).thenReturn(null);
 
         LOG.info("Vor controller method");
 
