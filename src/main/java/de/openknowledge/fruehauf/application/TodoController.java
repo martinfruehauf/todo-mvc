@@ -29,11 +29,6 @@ public class TodoController {
     private TodoService todoService;
 
     public TodoController() {
-        LOG.info("Todo Controller created");
-    }
-
-    public TodoController(final TodoService todoService) {
-        this.todoService = todoService;
     }
 
     @GET
