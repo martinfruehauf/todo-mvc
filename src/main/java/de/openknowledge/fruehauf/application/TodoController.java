@@ -5,6 +5,7 @@ import de.openknowledge.fruehauf.domain.TodoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.mvc.Controller;
 import javax.mvc.Models;
@@ -16,6 +17,7 @@ import java.util.List;
 
 @Path("/todos")
 @Controller
+@RequestScoped
 public class TodoController {
 
     private static final Logger LOG = LoggerFactory.getLogger(TodoController.class);
@@ -27,11 +29,6 @@ public class TodoController {
     private TodoService todoService;
 
     public TodoController() {
-        LOG.info("Todo Controller created");
-    }
-
-    public TodoController(final TodoService todoService) {
-        this.todoService = todoService;
     }
 
     @GET
