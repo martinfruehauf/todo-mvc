@@ -38,7 +38,7 @@ public class TodoControllerTest {
         expected.add(new FullTodoDTO(1, "Rasen mähen", "den ganzen Garten", false, LocalDateTime.of(2020, Month.JANUARY, 10, 7, 30).toString()));
         expected.add(new FullTodoDTO(2, "Treppe putzen", "meine Etage", true, LocalDateTime.of(2019, Month.FEBRUARY, 10, 7, 30).toString()));
 
-        ArrayList<Todo> mock = new ArrayList<Todo>();
+        ArrayList<Todo> mock = new ArrayList<>();
 
         mock.add(new Todo(1, "Rasen mähen", "den ganzen Garten", false, LocalDateTime.of(2020, Month.JANUARY, 10, 7, 30)));
         mock.add(new Todo(2, "Treppe putzen", "meine Etage", true, LocalDateTime.of(2019, Month.FEBRUARY, 10, 7, 30)));
