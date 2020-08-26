@@ -17,8 +17,6 @@
 
         <timestamp>${maven.build.timestamp}</timestamp>
 
-        <version.slf4j>1.7.28</version.slf4j>
-
         <version.jakarta-ee>8.0.0</version.jakarta-ee>
 
         <version.microprofile>3.3</version.microprofile>
@@ -243,18 +241,6 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${version.apache_commons-lang}</version>
-        </dependency>
-
-        <!-- Logging -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${version.slf4j}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-jdk14</artifactId>
-            <version>${version.slf4j}</version>
         </dependency>
 
         <!-- Unit Testing -->
