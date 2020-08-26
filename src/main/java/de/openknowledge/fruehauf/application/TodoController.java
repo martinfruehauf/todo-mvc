@@ -40,7 +40,6 @@ public class TodoController {
             listFullTodoDTO.add(new FullTodoDTO(todo));
         }
         models.put("todos", listFullTodoDTO);
-        //LOG.info(models.get("todos").toString());
     }
 
 }
