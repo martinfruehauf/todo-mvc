@@ -10,8 +10,10 @@ import javax.inject.Inject;
 import javax.mvc.Controller;
 import javax.mvc.Models;
 import javax.mvc.View;
+import javax.validation.constraints.NotNull;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +42,21 @@ public class TodoController {
             listFullTodoDTO.add(new FullTodoDTO(todo));
         }
         models.put("todos", listFullTodoDTO);
+    }
+
+    @GET
+    @Path("{todoId}")
+    @View("details.xhtml")
+    public void todoDetails(@PathParam("todoId") @NotNull Long todoId) {
+       try {
+            LOG.info("Get todo by Id: {}", todoId);
+            Todo todo = todoService.getTodoById(todoId);
+            FullTodoDTO fullTodoDTO = new FullTodoDTO(todo);
+            models.put("details", fullTodoDTO);
+        } catch (IllegalArgumentException e) {
+            LOG.warn("Could not find todo by id: {}", todoId);
+
+        }
     }
 
 }
