@@ -52,4 +52,17 @@ public class TodoControllerTest {
         this.controller.allTodos();
         assertNull(null, models.get("todos"));
     }
+
+    @Test
+    public void testTodoDetails() {
+        Mockito.doReturn(new Todo(1, "Bla", "Do the bla", true, LocalDateTime.of(2020, Month.JANUARY, 10, 7, 30)))
+                .when(service)
+                .getTodoById(1);
+
+        Mockito.when(models.put(ArgumentMatchers.anyString(), ArgumentMatchers.any())).thenReturn(null);
+
+        this.controller.todoDetails(1L);
+
+        assertNull(null, models.get("details"));
+    }
 }
