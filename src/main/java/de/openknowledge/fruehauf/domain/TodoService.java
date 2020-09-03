@@ -21,4 +21,14 @@ public class TodoService {
         LOG.info("Get all todos");
         return todoRepository.getAllTodos();
     }
+
+    public Todo getTodoById(final long todoId) {
+        LOG.info("Get todo by id: {}", todoId);
+        Todo todo = todoRepository.findById(todoId);
+        if (todo == null) {
+            LOG.info("Todo by id {} does not exist", todoId);
+            throw new IllegalArgumentException("Could not find todo with id: " + todoId);
+        }
+        return todo;
+    }
 }

@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                template="/WEB-INF/layout/template.xhtml">
+    <ui:define name="pageTitle">Todo Details</ui:define>
+    <ui:define name="content">
+        <div class="row">
+            <div class="col-md-12">
+                <dl class="dl-horizontal">
+                    <dt>Todo Name:</dt>
+                    <dd>${details.name}</dd>
+                    <dt>Description:</dt>
+                    <dd>${details.description}</dd>
+                    <dt>Status:</dt>
+                    <dd>${details.status}</dd>
+                    <dt>Due Date:</dt>
+                    <dd>${details.dueDate}</dd>
+                </dl>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>

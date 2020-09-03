@@ -24,4 +24,8 @@ public class TodoRepository {
         TypedQuery<Todo> allQuery = em.createQuery(all);
         return allQuery.getResultList();
     }
+
+    public Todo findById(final long todoId) {
+        return em.find(Todo.class, todoId);
+    }
 }
