@@ -48,14 +48,13 @@ public class TodoController {
     @Path("{todoId}")
     @View("details.xhtml")
     public void todoDetails(@PathParam("todoId") @NotNull Long todoId) {
-       try {
-            LOG.info("Get todo by Id: {}", todoId);
+        LOG.info("Get todo by Id: {}", todoId);
+        try {
             Todo todo = todoService.getTodoById(todoId);
             FullTodoDTO fullTodoDTO = new FullTodoDTO(todo);
             models.put("details", fullTodoDTO);
         } catch (IllegalArgumentException e) {
             LOG.warn("Could not find todo by id: {}", todoId);
-
         }
     }
 
