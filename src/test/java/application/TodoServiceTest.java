@@ -43,4 +43,17 @@ public class TodoServiceTest {
 
         assertEquals(expected, this.service.allTodos());
     }
+
+    @Test
+    public void testGetTodoById() {
+        Todo expected = new Todo(1, "Rasen mähen", "den ganzen Garten", false, LocalDateTime.of(2020, Month.JANUARY, 10, 7, 30));
+        Todo mock = new Todo(1, "Rasen mähen", "den ganzen Garten", false, LocalDateTime.of(2020, Month.JANUARY, 10, 7, 30));
+
+        Mockito.doReturn(mock)
+                .when(repository)
+                .findById(1L);
+
+        assertEquals(expected, this.service.getTodoById(1L));
+
+    }
 }
