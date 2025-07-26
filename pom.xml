@@ -24,7 +24,7 @@
 
         <version.resteasy>3.11.2.Final</version.resteasy>
 
-        <version.apache_commons-lang>3.10</version.apache_commons-lang>
+        <version.apache_commons-lang>3.18.0</version.apache_commons-lang>
 
         <version.slf4j>1.7.30</version.slf4j>
 
