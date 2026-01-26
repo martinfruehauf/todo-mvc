@@ -30,7 +30,7 @@
 
         <version.junit5>5.6.2</version.junit5>
         <version.junit5-launcher>1.6.2</version.junit5-launcher>
-        <version.assertj>3.16.1</version.assertj>
+        <version.assertj>3.27.7</version.assertj>
         <version.mockito>3.3.3</version.mockito>
 
         <version.testcontainers>1.14.3</version.testcontainers>
